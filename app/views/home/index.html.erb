@@ -1,12 +1,5 @@
-<h1> Welcome to my app </h1>
+<div class="column">
+    <h1 class="bigtext"> Welcome to my app </h1>
 
-<% if user_signed_in?%>
-    <p> Ciao!, <%=current_user.email%></p>
-    <%= link_to "Vuoi fare logout?", destroy_user_session_path, data: { "turbo-method": :delete} %><br>
-    <%# <% link_to "Vuoi cancellarti?", cancel_user_registration, data: { "turbo-method": :delete} %><br> 
 
-<% else %>
-    <p> Benvenuto, sconosciuto!<p>
-    <%= link_to "Want to sign_up?", new_user_registration_path %><br>
-    <%= link_to "Want to login?", new_user_session_path %><br>
-<% end %>
+</div>

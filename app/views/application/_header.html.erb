@@ -1,0 +1,26 @@
+
+<nav class="navbar is-light  is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand ">
+        <%= link_to image_tag("bear.png", class: "navbar-item navbar-start"), "http://www.foodissey.it" %>
+        <div class="navbar-item notice"><%= notice %></div>
+        <div class="navbar-item alert"><%= alert %></div>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+            <% if user_signed_in?%>
+                <div class="navbar-item"> Ciao!, <%=current_user.email%></div>
+                <%= link_to "Vuoi fare logout?", destroy_user_session_path, data: { "turbo-method": :delete} , class: "navbar-item"%>
+                <%# <% link_to "Vuoi cancellarti?", cancel_user_registration, data: { "turbo-method": :delete} %><br> 
+            <% else %>
+                <%= link_to "Want to sign_up?", new_user_registration_path, class: "navbar-item" %>
+                <%= link_to "Want to login?", new_user_session_path, class: "navbar-item" %>
+            <% end %>
+        </div> 
+    </div>
+</nav>
+

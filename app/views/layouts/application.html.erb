@@ -10,11 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="has-navbar-fixed-top column" >
     <%= render "header"%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="has-navbar-fixed-top column">
+       <%= yield %>
+    </div>
 
   </body>
 </html>
