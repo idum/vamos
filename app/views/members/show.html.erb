@@ -4,4 +4,8 @@
     <h1> Il tuo profilo: </h1>
     <h1> Ruolo: <%=current_member.role%> </h1>
     <h1> Quel che sappiamo di te: <%=current_member.mixdata%> </h1>
+
+    <% if current_user.admin? %>
+        <%= link_to "Vuoi andare alla pagina admin?", admin_path %>
+    <% end %>
 </div>

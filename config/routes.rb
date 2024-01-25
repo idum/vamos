@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :members
+
+  get "admin" =>"admin_dashboard#index"
 end
