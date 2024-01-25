@@ -1,1 +1,13 @@
-<h1> Ciao, sei l'admin. il tuo account è: <%=current_user.email%> </h1>
+<div class="bigtext column"> Ciao, sei l'admin. il tuo account è: <%=current_user.email%> </div>
+<div class="columns is-centered is-mobile">
+    <table class="table">
+        <tbody>
+            <% @total_users.each do |user| %>
+                <tr>
+                    <td ><%= user.email %></td>
+                    <td ><%= user.admin  %></td>
+                </tr>
+            <% end %>
+       </tbody>
+    </table>
+</div>
