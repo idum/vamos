@@ -12,11 +12,12 @@
 
   <body class="has-navbar-fixed-top" >
     <%= render "header"%>
-    <div class="has-navbar-fixed-top columns">
-        <div class="column is-3"></div>
-        <div class="column is-6 box has-text-centered has-background-light" ><%= yield %></div>
-        <div class="column is-2"></div>
+    <div class="has-navbar-fixed-top has-navbar-fixed-bottom columns">
+        <div class="column hero is-2 is-fullheight has-background-dark has-text-centered"><%= render "calendarbar" %></div>
+        <div class="column hero is-8 box has-text-centered has-background-light" ><%= yield %></div>
+        <div class="column hero is-2 has-background-dark has-text-centered"><%= render "messengerbar" %></div>
     </div>
+    <%= render "footer"%>
 
   </body>
 </html>
