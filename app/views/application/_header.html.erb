@@ -1,27 +1,27 @@
-
-<nav class="navbar is-light  is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand ">
-        <%= link_to image_tag("bear.png", class: " navbar-item logoimg navbar-start"), root_path %>
-        <div class="navbar-item logo"> Vamos: Your Gaming Calendar </div>
-        <div class="navbar-item notice"><%= notice %></div>
-        <div class="navbar-item alert"><%= alert %></div>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-            <% if user_signed_in?%>
-                <div class="navbar-item"> Ciao!, <%=current_user.email%></div>
-                <%= link_to "Vuoi fare logout?", destroy_user_session_path, data: { "turbo-method": :delete} , class: "navbar-item"%>
-                <%# <% link_to "Vuoi cancellarti?", cancel_user_registration, data: { "turbo-method": :delete} %><br> 
-            <% else %>
-                <%= link_to "Want to sign_up?", new_user_registration_path, class: "navbar-item" %>
-                <%= link_to "Want to login?", new_user_session_path, class: "navbar-item" %>
-            <% end %>
-        </div> 
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="navbar-brand ">
+            <%= link_to image_tag("bear.png", size: "50"), root_path %>
+            <div class="d-inline-block align-text-center"> Vamos: Your Gaming Calendar </div>
+            <div class="success d-inline-block align-text-center"><%= notice %></div>
+            <div class="danger d-inline-block align-text-center"><%= alert %></div>
+        </div>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu"> 
+            <div class="navbar-nav ms-auto">
+                <% if user_signed_in?%>
+                    <div class="nav-text"> Ciao!, <%=current_user.email%></div>
+                    <%= link_to "Vuoi fare logout?", destroy_user_session_path, data: { "turbo-method": :delete} , class: "nav-link active"%>
+                    <%# <% link_to "Vuoi cancellarti?", cancel_user_registration, data: { "turbo-method": :delete} %><br> 
+                <% else %>
+                    <%= link_to "Want to sign_up?", new_user_registration_path, class: "nav-link" %>
+                    <%= link_to "Want to login?", new_user_session_path, class: "nav-link" %>
+                <% end %>
+            </div> 
+        </div>
     </div>
 </nav>
 

@@ -10,12 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="has-navbar-fixed-top" >
+  <body class="container-fluid">
     <%= render "header"%>
-    <div class="has-navbar-fixed-top has-navbar-fixed-bottom columns">
-        <div class="column hero is-2 is-fullheight has-background-dark has-text-centered"><%= render "calendarbar" %></div>
-        <div class="column hero is-8 box has-text-centered has-background-light" ><%= yield %></div>
-        <div class="column hero is-2 has-background-dark has-text-centered"><%= render "messengerbar" %></div>
+    <div class="row text-center">
+        <div class="col"><%= render "calendarbar" %></div>
+        <div class="col-8"><%= yield %></div>
+        <div class="col"><%= render "messengerbar" %></div>
     </div>
     <%= render "footer"%>
 
